@@ -1,0 +1,52 @@
+
+name: Branch Flow Validation
+
+on:
+  pull_request:
+    branches:
+      - dev
+      - qual
+      - master
+
+jobs:
+  validate-source:
+    name: Validate promotion source
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check branch flow
+        env:
+          BASE_BRANCH: ${{ github.base_ref }}
+          SOURCE_BRANCH: ${{ github.head_ref }}
+        run: |
+          echo "Source: $SOURCE_BRANCH"
+          echo "Destination: $BASE_BRANCH"
+
+          case "$BASE_BRANCH" in
+            dev)
+              if [[ "$SOURCE_BRANCH" == users/* ]]; then
+                echo "Valid individual branch -> dev"
+              else
+                echo "Invalid source for dev"
+                exit 1
+              fi
+              ;;
+
+            qual)
+              if [[ "$SOURCE_BRANCH" == "dev" ]]; then
+                echo "Valid dev -> qual"
+              else
+                echo "Invalid source for qual"
+                exit 1
+              fi
+              ;;
+
+            master)
+              if [[ "$SOURCE_BRANCH" == "qual" ]]; then
+                echo "Valid qual -> master"
+              else
+                echo "Invalid source for master"
+                exit 1
+              fi
+              ;;
+          esac
