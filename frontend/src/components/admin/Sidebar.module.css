@@ -1,0 +1,317 @@
+.sidebar {
+  position: fixed;
+  z-index: 2;
+  inset: 0 auto 0 0;
+  display: flex;
+  width: 370px;
+  flex-direction: column;
+  padding: 27px 26px 20px;
+  color: #fff;
+  background: #191916;
+}
+
+.brand {
+  display: flex;
+  min-height: 82px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  color: #fff;
+}
+
+.brandMonogram {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 55px;
+  font-weight: 400;
+  letter-spacing: 5px;
+  line-height: 0.9;
+}
+
+.brandName {
+  margin: 5px 0 0 51px;
+  color: #c7a15b;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 12px;
+  font-style: italic;
+  letter-spacing: 0.3px;
+}
+
+.menuLabel {
+  margin: 37px 0 15px 15px;
+  color: #8d8c86;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.navigationLink {
+  position: relative;
+  display: flex;
+  min-height: 56px;
+  align-items: center;
+  gap: 14px;
+  padding: 0 15px;
+  border-radius: 9px;
+  color: #b6b5b0;
+  font-size: 15px;
+  font-weight: 550;
+  transition:
+    background-color 140ms ease,
+    color 140ms ease;
+}
+
+.navigationLink:hover {
+  color: #fff;
+  background: #24231f;
+}
+
+.navigationLink svg {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+}
+
+.active {
+  color: #fff;
+  background: #2b2a26;
+}
+
+.active::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  border-radius: 9px 0 0 9px;
+  background: #c7a15b;
+  content: "";
+}
+
+.active svg {
+  color: #c7a15b;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: auto;
+}
+
+.helpCard {
+  display: flex;
+  min-height: 88px;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 17px 15px;
+  border: 1px solid #393832;
+  border-radius: 12px;
+  transition: border-color 140ms ease;
+}
+
+.helpCard:hover {
+  border-color: #c7a15b;
+}
+
+.helpIcon {
+  display: grid;
+  width: 31px;
+  height: 31px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid #c7a15b;
+  border-radius: 50%;
+  color: #c7a15b;
+  font-size: 18px;
+}
+
+.helpCopy,
+.profileCopy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.helpCopy {
+  gap: 6px;
+  padding-top: 2px;
+}
+
+.helpCopy strong,
+.profileCopy strong {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.helpCopy > span,
+.profileCopy > span {
+  color: #97968f;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.helpArrow {
+  margin: 1px 0 0 auto;
+  color: #c7a15b;
+  font-size: 17px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 3px 1px;
+  border-top: 1px solid #393832;
+}
+
+.avatar {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  color: #a77c31;
+  background: #f3ead4;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.profileCopy {
+  gap: 3px;
+}
+
+.profileArrow {
+  margin-left: auto;
+  color: #d7d5ce;
+  font-size: 18px;
+}
+
+@media (max-width: 1100px) and (min-width: 761px) {
+  .sidebar {
+    width: 300px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 760px) {
+  .sidebar {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    padding: 16px 20px 14px;
+  }
+
+  .brand {
+    min-height: 60px;
+    align-items: flex-start;
+  }
+
+  .brandMonogram {
+    font-size: 37px;
+  }
+
+  .brandName {
+    margin: 3px 0 0 35px;
+    font-size: 10px;
+  }
+
+  .menuLabel {
+    margin: 17px 0 8px 4px;
+  }
+
+  .navigation {
+    flex-direction: row;
+    gap: 5px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .navigationLink {
+    min-height: 43px;
+    flex: 0 0 auto;
+    gap: 8px;
+    padding: 0 12px;
+    font-size: 13px;
+  }
+
+  .navigationLink svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .footer {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 14px;
+    margin-top: 12px;
+  }
+
+  .helpCard {
+    min-height: 66px;
+    align-items: center;
+    gap: 9px;
+    padding: 10px;
+  }
+
+  .helpIcon {
+    width: 27px;
+    height: 27px;
+    font-size: 15px;
+  }
+
+  .helpCopy {
+    gap: 2px;
+    padding: 0;
+  }
+
+  .helpCopy strong,
+  .profileCopy strong {
+    font-size: 11px;
+  }
+
+  .helpCopy > span,
+  .profileCopy > span {
+    font-size: 10px;
+  }
+
+  .helpArrow,
+  .profileArrow {
+    display: none;
+  }
+
+  .profile {
+    gap: 9px;
+    padding: 10px 0;
+    border: 0;
+  }
+
+  .avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 420px) {
+  .sidebar {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .navigationLink {
+    gap: 6px;
+    padding: 0 9px;
+  }
+
+  .footer {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}

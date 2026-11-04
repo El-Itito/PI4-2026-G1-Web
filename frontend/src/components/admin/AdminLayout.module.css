@@ -1,0 +1,42 @@
+.layout {
+  min-height: 100vh;
+}
+
+.workspace {
+  min-height: 100vh;
+  margin-left: 370px;
+}
+
+.content {
+  width: min(100%, 1280px);
+  margin: 0 auto;
+  padding: 46px 48px 64px;
+}
+
+@media (max-width: 1100px) and (min-width: 761px) {
+  .workspace {
+    margin-left: 300px;
+  }
+
+  .content {
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+}
+
+@media (max-width: 760px) {
+  .workspace {
+    margin-left: 0;
+  }
+
+  .content {
+    padding: 32px 22px 48px;
+  }
+}
+
+@media (max-width: 420px) {
+  .content {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}

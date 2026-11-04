@@ -1,0 +1,150 @@
+.topbar {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  display: flex;
+  min-height: 82px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 0 38px;
+  border-bottom: 1px solid #e8e7e2;
+  background: #fff;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #77766f;
+  font-size: 13px;
+}
+
+.statusDot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #579875;
+  box-shadow: 0 0 0 4px #e6f0e9;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.profileLabel {
+  color: #77766f;
+  font-size: 12px;
+}
+
+.profileSelect {
+  min-width: 154px;
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid #e5e3dd;
+  border-radius: 9px;
+  color: #191916;
+  background: #fff;
+  font: inherit;
+  font-size: 12px;
+}
+
+.notifications {
+  position: relative;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid #e5e3dd;
+  border-radius: 50%;
+  color: #a77c31;
+}
+
+.notifications svg {
+  width: 18px;
+  height: 18px;
+}
+
+.notifications > span {
+  position: absolute;
+  top: -4px;
+  right: -3px;
+  display: grid;
+  width: 17px;
+  height: 17px;
+  place-items: center;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  background: #c7a15b;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.avatar {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  color: #a77c31;
+  background: #f3ead4;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+@media (max-width: 760px) {
+  .topbar {
+    min-height: 68px;
+    padding: 0 22px;
+  }
+}
+
+@media (max-width: 520px) {
+  .topbar {
+    gap: 8px;
+    padding: 0 16px;
+  }
+
+  .status {
+    gap: 7px;
+    font-size: 11px;
+  }
+
+  .controls {
+    gap: 8px;
+  }
+
+  .profileLabel {
+    display: none;
+  }
+
+  .profileSelect {
+    min-width: 0;
+    width: 132px;
+    height: 38px;
+    padding: 0 8px;
+    font-size: 11px;
+  }
+
+  .notifications {
+    width: 36px;
+    height: 36px;
+  }
+
+}
+
+@media (max-width: 360px) {
+  .status > span:last-child {
+    max-width: 80px;
+    line-height: 1.25;
+  }
+
+  .profileSelect {
+    width: 98px;
+  }
+}
